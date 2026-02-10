@@ -1,23 +1,69 @@
-export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center p-8">
-      <div className="max-w-2xl">
-        <h1 className="text-4xl font-bold mb-8">Hello World</h1>
+import Link from "next/link";
 
-        <h2 className="text-2xl font-semibold mb-4">Advantages of Claude Code</h2>
-        <ul className="list-disc list-inside space-y-2 text-lg">
-          <li>Agentic coding directly in your terminal</li>
-          <li>Understands your entire codebase with deep context awareness</li>
-          <li>Executes multi-step tasks autonomously</li>
-          <li>Reads, writes, and edits files intelligently</li>
-          <li>Runs shell commands and interprets outputs</li>
-          <li>Searches the web for documentation and solutions</li>
-          <li>Supports custom tools via MCP (Model Context Protocol)</li>
-          <li>Works with any programming language or framework</li>
-          <li>Integrates with Git for version control workflows</li>
-          <li>Maintains conversation context across sessions</li>
-        </ul>
-      </div>
+export default function LandingPage() {
+  return (
+    <div className="min-h-screen bg-gray-50">
+      <header className="bg-white shadow-sm">
+        <div className="max-w-4xl mx-auto px-4 py-4 flex justify-between items-center">
+          <h1 className="text-xl font-bold">Notes</h1>
+          <div className="flex gap-4">
+            <Link
+              href="/login"
+              className="text-gray-600 hover:text-gray-900"
+            >
+              Login
+            </Link>
+            <Link
+              href="/register"
+              className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+            >
+              Sign Up
+            </Link>
+          </div>
+        </div>
+      </header>
+
+      <main className="max-w-4xl mx-auto px-4 py-20 text-center">
+        <h2 className="text-4xl font-bold mb-4">Simple Note Taking</h2>
+        <p className="text-xl text-gray-600 mb-8">
+          Create, edit, and share rich-text notes with ease.
+        </p>
+        <div className="flex justify-center gap-4">
+          <Link
+            href="/register"
+            className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-lg"
+          >
+            Get Started
+          </Link>
+          <Link
+            href="/login"
+            className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-100 text-lg"
+          >
+            Login
+          </Link>
+        </div>
+
+        <div className="mt-16 grid md:grid-cols-3 gap-8 text-left">
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold mb-2">Rich Text Editor</h3>
+            <p className="text-gray-600 text-sm">
+              Format your notes with headings, lists, code blocks, and more.
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold mb-2">Public Sharing</h3>
+            <p className="text-gray-600 text-sm">
+              Share notes with anyone via a public link.
+            </p>
+          </div>
+          <div className="p-6 bg-white rounded-lg shadow">
+            <h3 className="font-semibold mb-2">Fast & Simple</h3>
+            <p className="text-gray-600 text-sm">
+              Clean interface focused on writing.
+            </p>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
